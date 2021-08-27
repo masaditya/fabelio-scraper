@@ -11,6 +11,7 @@ export default async function handler(
   const $ = cheerio.load(data);
   const price = $(".text-16.font-600").text();
   const description = $(".text-16").map((i, el) => {
+    // @ts-ignore
     return el.children[0].data;
   });
   let a = description.splice(description.length - 3, 3);
