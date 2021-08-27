@@ -15,13 +15,13 @@ const Home: NextPage = () => {
     setLoading(true);
     const raw = await fetch(`/api/scrap?url=${link}`);
     const data = await raw.json();
-    await addData(data)
+    await addData(data);
     setLoading(false);
     setLink("");
     setTimeout(() => {
       router.push("/products");
     }, 1000);
-  }, [link]);
+  }, [link, router]);
 
   const addData = async (data: {
     image: string;

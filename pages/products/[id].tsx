@@ -35,7 +35,7 @@ const Detail = () => {
             {loading ? (
               <Skeleton.Image />
             ) : (
-              <Image width={500} src={data.image} />
+              <Image width={500} src={data.image} alt="product-image" />
             )}
           </Col>
           <Col className="gutter-row" span={10}>

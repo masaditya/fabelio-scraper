@@ -1,7 +1,6 @@
 import { Table, Layout, Image, Button } from "antd";
 import type { NextPage } from "next";
 import { useRouter } from "next/dist/client/router";
-import Head from "next/head";
 import { useEffect, useState } from "react";
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { db } from "../firebase";
@@ -22,14 +21,13 @@ const Products: NextPage = () => {
     fetchData();
   }, []);
 
-  
-
   const columns = [
     {
       title: "Image",
       dataIndex: "image",
       key: "image",
-      render: (img: string) => <Image src={img} />,
+      // eslint-disable-next-line react/display-name
+      render: (img: string) => <Image src={img} alt="product-image" />,
     },
     {
       title: "Price",
@@ -45,6 +43,7 @@ const Products: NextPage = () => {
       title: "Detail",
       dataIndex: "id",
       key: "id",
+      // eslint-disable-next-line react/display-name
       render: (id: string) => (
         <Button onClick={() => router.push(`/products/${id}`)}> Detail </Button>
       ),
