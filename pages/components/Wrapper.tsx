@@ -13,10 +13,10 @@ const Wrapper = ({ children }: any) => {
       </Head>
       <Menu mode="horizontal" onClick={(e) => push(e.key)}>
         <Menu.Item key="/" icon={<InboxOutlined />}>
-          Add Product
+          Tambah Produk
         </Menu.Item>
         <Menu.Item key="/products" icon={<AppstoreOutlined />}>
-          List Product
+          List Produk
         </Menu.Item>
       </Menu>
       {children}
