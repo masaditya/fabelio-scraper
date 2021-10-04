@@ -21,7 +21,7 @@ const Detail = () => {
         setLoading(false);
       } else {
         // doc.data() will be undefined in this case
-        console.log("No such document!");
+        console.log("Dokumen tidak ditemukan!");
       }
     };
     if (router.query.id) fetchDetail();
